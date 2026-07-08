@@ -40,6 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
     appContainer.addEventListener('click', playOnFirstInteraction);
     appContainer.addEventListener('touchstart', playOnFirstInteraction);
 
+    // Pause music when tab is inactive, resume when active
+    let wasPlayingBeforeHidden = false;
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.classList.remove('animate-spin');
+                isPlaying = false;
+                wasPlayingBeforeHidden = true;
+            }
+        } else {
+            if (wasPlayingBeforeHidden) {
+                audio.play().then(() => {
+                    musicIcon.classList.add('animate-spin');
+                    isPlaying = true;
+                }).catch(err => {
+                    console.log("Audio resume blocked on tab focus: ", err);
+                });
+                wasPlayingBeforeHidden = false;
+            }
+        }
+    });
+
     // 1.5 Loading Screen Cover Setup
     const loadingScreen = document.getElementById('loading-screen');
     const progressContainer = document.getElementById('progress-bar-container');
