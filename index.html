@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housewarming Invitation</title>
+    
+    <!-- Open Graph / Rich Share Preview Metadata -->
+    <meta property="og:title" content="Housewarming Invitation">
+    <meta property="og:description" content="We warmly invite you to celebrate the opening of our new home. Join us for our housewarming celebration.">
+    <meta property="og:image" content="https://house-warming-sable.vercel.app/prv.png">
+    <meta property="og:url" content="https://house-warming-sable.vercel.app/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Housewarming Invitation">
+    <meta name="twitter:description" content="We warmly invite you to celebrate the opening of our new home. Join us for our housewarming celebration.">
+    <meta name="twitter:image" content="https://temp-invitation.example.com/prv.png">
+    
+    <!-- Elegant Wedding Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@200;300;400&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;1,8..60,300&family=Pinyon+Script&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Blur Effect for Desktop View -->
+    <div class="desktop-bg-blur"></div>
+
+    <!-- Main Container: Constrained to Mobile Width on Desktop, Full Width on Mobile -->
+    <div class="app-container">
+        
+        <!-- Loading Screen Cover Overlay -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-center-wrapper">
+                <img src="first_img.png" alt="Welcome Cover" class="loading-cover-img">
+                
+                <p class="arabic-blessing">بَارَكَ اللَّهُ لَكُمْ فِي بَيْتِكُمْ</p>
+                
+                <div class="loading-action-container">
+                    <div id="progress-bar-container" class="progress-bar-container">
+                        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                    </div>
+                    <div id="open-prompt" class="open-prompt hidden-prompt">
+                        <span>TOUCH TO OPEN</span>
+                        <i class="fas fa-heart pulse-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Music Player -->
+        <div class="music-player-container">
+            <button id="music-toggle" class="music-btn" aria-label="Toggle music">
+                <i class="fas fa-music animate-spin"></i>
+            </button>
+            <!-- Royalty-free ambient wedding instrumental piano audio (user can replace this link easily) -->
+            <audio id="bg-music" loop preload="auto">
+                <source src="inviteh.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Invitation Scroll Wrapper -->
+        <main class="invitation-scroll">
+            
+            <!-- Image Sections Stacking Vertically -->
+            <div class="invitation-image-wrapper fade-in-section">
+                <!-- Content container centered on the page -->
+                <div class="first-page-content">
+                    <!-- Bismillah centered above the text -->
+                    <div class="bismi-container">
+                        <img src="bismi.png" alt="Bismillah" class="bismi-img">
+                    </div>
+                    
+                    <!-- Small decorative heart -->
+                    <div class="heart-divider">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    
+                    <!-- Alhamdulillah cursive text -->
+                    <div class="alhamdulillah-text">Alhamdulillah</div>
+                    
+                    <!-- Invitation Heading -->
+                    <h1 class="invitation-heading">A Warm Welcome<br>To Our New Home</h1>
+                    
+                    <!-- Subheading -->
+                    <p class="invitation-subheading">A new beginning, written by Allah's mercy.</p>
+                    
+                    <!-- Key image with sway animation in the middle -->
+                    <div class="key-container">
+                        <img src="key.png" alt="House Key" class="key-img">
+                    </div>
+                    
+                    <!-- Names and invite text -->
+                    <div class="invitation-body">
+                        <p class="invitation-names">
+                            <span class="name">Mr. Saajan Lathif</span>
+                            <span class="ampersand">&amp;</span>
+                            <span class="name">Mrs. Mafeeda Saajan</span>
+                        </p>
+                        <p class="invitation-message">warmly invite you to celebrate the opening of their home.</p>
+                    </div>
+                </div>
+                
+                <!-- Minimal Scroll Down Indicator -->
+                <div class="scroll-indicator">
+                    <span class="scroll-text">Scroll Down</span>
+                    <div class="scroll-arrow-line"></div>
+                </div>
+                
+                <img src="img1.png" alt="Wedding Invitation Page 1" class="invitation-img">
+            </div>
+
+            <!-- Second Invitation Page (Section 2) -->
+            <div class="invitation-image-wrapper fade-in-section">
+                <!-- Arch Frame Container -->
+                <div class="second-page-frame">
+                    <div class="arch-frame-border">
+                        <!-- Top Quote -->
+                        <div class="quote-group">
+                            <p class="quote-line">EVERY PRAYER.</p>
+                            <p class="quote-line">EVERY EFFORT.</p>
+                            <p class="quote-line">EVERY DREAM.</p>
+                        </div>
+                        
+                        <p class="mercy-text">By Allah's infinite mercy,</p>
+                        
+                        <!-- House Name -->
+                        <div class="house-name-text">Mafeeda Manzil</div><br>
+                        <div class="is-now-home-text">IS NOW HOME.</div>
+                        
+                        <!-- Tiny Heart ornament -->
+                        <div class="small-heart-divider">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        
+                        <!-- Invitation message -->
+                        <p class="gratitude-text">
+                            With hearts full of gratitude, we invite you to celebrate this beautiful new beginning and pray that Allah blesses our home with
+                        </p>
+                        
+                        <!-- Blessings list -->
+                        <div class="blessings-list">
+                            <span>BARAKAH</span>
+                            <span class="blessing-separator">♥</span>
+                            <span>PEACE</span>
+                            <span class="blessing-separator">♥</span>
+                            <span>HAPPINESS</span>
+                            <span class="blessing-separator">♥</span>
+                            <span>ENDLESS MEMORIES</span>
+                        </div>
+                        
+                        <!-- Small Heart ornament -->
+                        <div class="small-heart-divider">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        
+                        <!-- Dua text -->
+                        <p class="dua-text">
+                            Your presence and your du'as are<br>the greatest blessing we could receive.
+                        </p>
+                    </div>
+                </div>
+                
+
+                
+                <img src="img2.png" alt="Wedding Invitation Page 2" class="invitation-img">
+            </div>
+
+            <!-- Countdown Section -->
+            <div class="invitation-image-wrapper countdown-page-wrapper fade-in-section">
+                <div class="countdown-card-inner">
+                    <!-- Heading -->
+                    <div class="countdown-header">
+                        <h2 class="countdown-heading-title">COUNTING THE MOMENTS</h2>
+                        <p class="countdown-heading-sub">Until we welcome you to our new home</p>
+                    </div>
+                    
+                    <!-- Small Heart divider -->
+                    <div class="small-heart-divider" style="margin: 16px 0 24px 0;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    
+                    <!-- Timer blocks -->
+                    <div class="countdown-timer-container">
+                        <!-- Days -->
+                        <div class="timer-block">
+                            <span id="countdown-days" class="timer-number">00</span>
+                            <span class="timer-label">Days</span>
+                        </div>
+                        
+                        <!-- Hours -->
+                        <div class="timer-block">
+                            <span id="countdown-hours" class="timer-number">00</span>
+                            <span class="timer-label">Hours</span>
+                        </div>
+                        
+                        <!-- Minutes -->
+                        <div class="timer-block">
+                            <span id="countdown-mins" class="timer-number">00</span>
+                            <span class="timer-label">Mins</span>
+                        </div>
+                        
+                        <!-- Seconds -->
+                        <div class="timer-block">
+                            <span id="countdown-secs" class="timer-number">00</span>
+                            <span class="timer-label">Secs</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Small Heart divider -->
+                    <div class="small-heart-divider" style="margin: 24px 0 0 0;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Invitation Page (Section 3) -->
+            <div class="invitation-image-wrapper third-page-wrapper fade-in-section">
+                <!-- Golden Border Frame Overlay -->
+                
+                <!-- Content container centered -->
+                <div class="third-page-content">
+                    <!-- Heading -->
+                    <div class="celebration-header">
+                        <h1 class="celebration-title">HOUSEWARMING</h1>
+                        <div class="celebration-subtitle">Celebration</div>
+                    </div>
+                    
+                    <!-- Small Heart divider -->
+                    <div class="small-heart-divider" style="margin: 8px 0 16px 0;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    
+                    <!-- Simplified Details Section (Stacked Vertically) -->
+                    <div class="simplified-details-container">
+                        <!-- Date -->
+                        <div class="detail-row">
+                            <i class="far fa-calendar-alt detail-icon"></i>
+                            <span class="detail-text">Saturday, 1st August</span>
+                        </div>
+                        
+                        <!-- Time -->
+                        <div class="detail-row">
+                            <i class="far fa-clock detail-icon"></i>
+                            <span class="detail-text">12:00 PM - 3:00 PM</span>
+                        </div>
+                        
+                        <!-- Home Illustration -->
+                        <div class="home-illustration-container">
+                            <img src="home.png" alt="Home Illustration" class="home-illustration-img">
+                        </div>
+                        
+                        <!-- Location -->
+                        <div class="detail-row">
+                            <i class="fas fa-map-marker-alt detail-icon"></i>
+                            <span class="detail-text">Mafeeda Manzil</span>
+                        </div>
+                        
+                        <!-- Google Maps Link Button -->
+                        <a href="https://maps.app.goo.gl/gkZbQ8yXxxrpEdg77?g_st=ic" target="_blank" class="google-maps-btn">
+                            <i class="fas fa-directions"></i> Click to Open in Google Maps
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Info Section -->
+                    <div class="contact-info-container">
+                        <p class="contact-label">FOR ENQUIRIES & DIRECTIONS:</p>
+                        <div class="contact-numbers">
+                            <a href="tel:+919645111101" class="contact-link">
+                                <i class="fas fa-phone-alt"></i> Main: +91 96451 11101
+                            </a>
+                            <a href="tel:+919847511118" class="contact-link">
+                                <i class="fas fa-phone-alt"></i> Alt: +91 98475 11118
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Small Heart divider -->
+                    <div class="small-heart-divider" style="margin: 16px 0 12px 0;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    
+                    <!-- Gift Note -->
+                    <p class="gift-note-text">No gifts, please—your company is all we wish for.</p>
+                    <p class="blessing-note-text">Your presence and du'as are the greatest blessing.</p>
+                    
+                    <!-- Bottom Small Text Area -->
+                    <div class="bottom-welcome-group">
+                        <p class="welcome-inshallah">In shaa Allah,</p>
+                        <p class="welcome-forward-text">we look forward to welcoming you.</p>
+                    </div>
+                    
+                    <!-- Alhamdulillah Cursive closing logo -->
+                    <div class="alhamdulillah-closing">Alhamdulillah</div>
+                </div>
+                
+                <!-- Down flower positioned at the bottom padding 0 -->
+                <div class="down-flower-container">
+                    <img src="down_flower.png" alt="Flowers" class="down-flower-img">
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script File -->
+    <script src="app.js"></script>
+</body>
+</html>

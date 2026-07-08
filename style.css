@@ -1,0 +1,1025 @@
+/* Design System Variables */
+:root {
+    --bg-primary: #fcf9f5;
+    --bg-secondary: #f6efe6;
+    --primary-color: #c5a880; /* Rose Gold / Elegant Brass */
+    --primary-dark: #a3845a;
+    --primary-light: #ebdcc8;
+    --text-main: #3a332a;
+    --text-muted: #8b8070;
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    --border-radius: 16px;
+    --font-serif: 'Cinzel', serif;
+    --font-body: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: #12100e; /* Elegant dark background behind the phone simulator */
+    overflow: hidden;
+}
+
+/* Desktop Blur Background */
+.desktop-bg-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(197, 168, 128, 0.15) 0%, rgba(18, 16, 14, 0.95) 100%);
+    z-index: 1;
+}
+
+/* Mobile-First App Container (Constrained on Desktop, Fullscreen on Mobile) */
+.app-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: var(--bg-primary);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-left: 1px solid rgba(197, 168, 128, 0.2);
+    border-right: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+/* Media query for simulating a luxury phone mockup on larger screens */
+@media (min-width: 480px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1c1815 0%, #0d0b0a 100%);
+    }
+    .app-container {
+        height: 92vh;
+        border-radius: 40px;
+        border: 8px solid #2a2520;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* Scroll Container */
+.invitation-scroll {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.invitation-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+.invitation-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.invitation-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 10px;
+}
+
+/* Stacked Image Wrapper */
+.invitation-image-wrapper {
+    position: relative;
+    width: 100%;
+    font-size: 0; /* Prevents tiny line spaces between block images */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+}
+
+/* First Page Layout: Centered Content */
+.first-page-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 24%; /* Positioned beautifully below the top flowers */
+    width: 86%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
+    font-family: 'Source Serif 4', serif;
+}
+
+/* Bismillah image sizing */
+.bismi-container {
+    width: 100%;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.bismi-img {
+    max-width: 48%;
+    height: auto;
+    display: inline-block;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+}
+
+/* Heart divider styling */
+.heart-divider {
+    color: var(--primary-color);
+    font-size: 0.65rem;
+    margin-bottom: 10px;
+}
+
+/* Alhamdulillah cursive script */
+.alhamdulillah-text {
+    font-family: 'Monsieur La Doulaise', 'Pinyon Script', cursive;
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Heading styling */
+.invitation-heading {
+    font-family: 'Cinzel', serif;
+    font-size: 1.28rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 1.45;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+/* Subheading styling */
+.invitation-subheading {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin-bottom: 16px;
+}
+
+/* Key container and sway animation */
+.key-container {
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key-img {
+    max-width: 45%;
+    height: auto;
+    display: inline-block;
+    transform-origin: top center;
+    animation: key-sway-new 3.1s ease-in-out infinite alternate;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes key-sway-new {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* Names and message styling */
+.invitation-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.invitation-names {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+}
+
+.invitation-names .name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.18rem;
+    font-weight: 500;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+}
+
+.invitation-names .ampersand {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--primary-color);
+}
+
+.invitation-message {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.18rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.45;
+    padding: 0 8px;
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 28%; /* Positioned higher up vertically on the right side */
+    right: 3%; /* Closer to the right border/edge */
+    left: auto;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.scroll-text {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    font-weight: 500;
+    opacity: 0.8;
+    writing-mode: vertical-rl; /* Displays text vertically */
+    text-orientation: mixed;
+    margin: 0;
+}
+
+.scroll-arrow-line {
+    width: 1px;
+    height: 35px;
+    background: linear-gradient(to bottom, var(--primary-color), transparent);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-arrow-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: var(--primary-dark);
+    animation: scroll-line 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes scroll-line {
+    0% {
+        top: -15px;
+        opacity: 0;
+    }
+    30% {
+        top: 0;
+        opacity: 1;
+    }
+    60% {
+        top: 20px;
+        opacity: 0;
+    }
+    100% {
+        top: 20px;
+        opacity: 0;
+    }
+}
+
+/* Invitation Images: Perfect stack, no stretch */
+.invitation-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.invitation-imgg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Interactive Floating Music Button */
+.music-player-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.music-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(252, 249, 245, 0.85);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(197, 168, 128, 0.25);
+    backdrop-filter: blur(5px);
+    transition: var(--transition-smooth);
+}
+
+.music-btn:hover {
+    transform: scale(1.08);
+    background: var(--bg-primary);
+    color: var(--primary-dark);
+}
+
+.music-btn:active {
+    transform: scale(0.95);
+}
+
+/* Spin animation for music playing */
+.animate-spin {
+    animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Footer styling */
+.invitation-footer {
+    padding: 30px 20px;
+    background-color: var(--bg-secondary);
+    text-align: center;
+    border-top: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.made-with-love {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.text-danger {
+    color: #e25b45;
+    margin: 0 2px;
+}
+
+/* Smooth fade-in scroll animation triggers */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Key Overlay and Animations are now handled in the main page content block */
+
+/* Loading Screen Overlay & Elements */
+.loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary); /* Clean white/cream page background */
+    z-index: 1000; /* Stays on top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+    overflow: hidden;
+    padding: 24px;
+}
+
+.loading-screen.dismissed {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-center-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px; /* Decent space below the image */
+    text-align: center;
+}
+
+.loading-cover-img {
+    max-width: 75%; /* Medium sized */
+    height: auto;
+    display: block;
+    border: none;
+    box-shadow: none; /* No shadow/box effects */
+}
+
+.arabic-blessing {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a3b2b; /* Elegant dark pine green */
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    margin: 5px 0 0 0;
+    direction: rtl; /* Right to Left for Arabic */
+}
+
+/* Progress Bar Styles */
+.progress-bar-container {
+    width: 150px;
+    height: 3px;
+    background-color: var(--primary-light);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 10px auto 0 auto;
+    transition: opacity 0.4s ease;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+}
+
+/* Touch to Open Prompt */
+.open-prompt {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    animation: pulse-text 1.8s infinite ease-in-out;
+    margin-top: 5px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hidden-prompt {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.pulse-heart {
+    font-size: 0.75rem;
+    color: #e25b45;
+    animation: heart-pulse 1.2s infinite;
+}
+
+@keyframes pulse-text {
+    0%, 100% { opacity: 0.6; transform: scale(0.98); }
+    50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes heart-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Second Page Frame Layout */
+.second-page-frame {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 14%; /* Positioned nicely below the top flowers */
+    width: 86%;
+    height: 72%;
+    z-index: 10;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.arch-frame-border {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 120px 120px 0 0; /* Creates the elegant arch shape */
+    padding: 30px 16px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Double border effect using ::after for extra luxury */
+.arch-frame-border::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 0.5px solid rgba(197, 168, 128, 0.4);
+    border-radius: 116px 116px 0 0;
+    pointer-events: none;
+}
+
+/* Quote styles */
+.quote-group {
+    margin-bottom: 24px;
+}
+
+.quote-line {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.mercy-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+/* House name styling */
+.house-name-text {
+    font-family: 'Monsieur La Doulaise', 'Pinyon Script', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    line-height: 1.0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.is-now-home-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+/* Small Heart Divider */
+.small-heart-divider {
+    color: var(--primary-color);
+    font-size: 0.5rem;
+    margin: 18px 0;
+}
+
+/* Gratitude text */
+.gratitude-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.55;
+    padding: 0 12px;
+    margin-bottom: 18px;
+}
+
+/* Blessings list */
+.blessings-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-dark);
+    margin-bottom: 18px;
+}
+
+.blessing-separator {
+    color: var(--primary-color);
+    font-size: 0.5rem;
+    margin: 0 2px;
+}
+
+/* Dua text styling */
+.dua-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 0 8px;
+}
+
+/* Key floating in bottom right of second page */
+.second-page-key-container {
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+    width: 25%;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.second-page-key {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: rotate(35deg); /* Elegant tilt */
+    filter: drop-shadow(-3px 5px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Third Page Wrapper (No background image height restriction) */
+.third-page-wrapper {
+    height: auto;
+    padding: 60px 0 72% 0; /* Padding bottom scales with width to match down_flower.png height */
+    background-color: var(--bg-primary);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Golden Border Frame Overlay (Stretches to cover dynamic wrapper height) */
+.third-page-frame-img {
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 3%;
+    bottom: 3%;
+    width: 92%;
+    height: 94%;
+    object-fit: fill; /* Stretches the 500x500 border frame to fit the card */
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Third Page Content Container (Relative layout to push container height) */
+.third-page-content {
+    position: relative;
+    left: auto;
+    transform: none;
+    top: auto;
+    width: 84%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
+    font-family: 'Source Serif 4', serif;
+    box-sizing: border-box;
+}
+
+/* Celebration titles */
+.celebration-header {
+    margin-bottom: 8px;
+}
+
+.celebration-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.celebration-subtitle {
+    font-family: 'Monsieur La Doulaise', 'Pinyon Script', cursive;
+    font-size: 3.1rem;
+    color: var(--primary-dark);
+    line-height: 1.0;
+}
+
+/* Simplified Details Container in Section 3 */
+.simplified-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin: 12px 0;
+    box-sizing: border-box;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 90%;
+}
+
+.detail-row .detail-icon {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.detail-row .detail-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--text-main);
+    letter-spacing: 0.4px;
+}
+
+/* Cute Home Illustration Styling */
+.home-illustration-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 6px 0; /* Decent margins */
+}
+
+.home-illustration-img {
+    width: 80px; /* Medium cute size */
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
+    opacity: 0.95;
+}
+
+/* Premium Google Maps Button */
+.google-maps-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary-dark);
+    text-decoration: none;
+    background-color: transparent;
+    transition: var(--transition-smooth);
+    margin-top: 6px;
+    pointer-events: auto; /* Enable clicking! */
+    cursor: pointer;
+}
+
+.google-maps-btn:hover {
+    background-color: var(--primary-light);
+    color: var(--text-main);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.google-maps-btn:active {
+    transform: translateY(0);
+}
+
+/* Gift Note text */
+.gift-note-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.blessing-note-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-top: -4px; /* Pull it slightly closer to the gift note */
+    margin-bottom: 14px;
+}
+
+/* Bottom welcome group */
+.bottom-welcome-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.welcome-inshallah {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.welcome-forward-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Alhamdulillah Closing Cursive */
+.alhamdulillah-closing {
+    font-family: 'Monsieur La Doulaise', 'Pinyon Script', cursive;
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+    line-height: 1.0;
+    margin-top: 6px;
+    margin-bottom: 30px; /* Leaves a decent space after final text before flowers */
+}
+
+/* Down Flower Overlay positioned at the bottom */
+.down-flower-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    line-height: 0; /* Prevents vertical gaps */
+}
+
+.down-flower-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Countdown Section Wrapper (Matches Section 3 background color) */
+.countdown-page-wrapper {
+    height: auto;
+    padding: 70px 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-card-inner {
+    width: 86%;
+    margin: 0 auto;
+    border: none;
+    padding: 20px 20px;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-header {
+    margin-bottom: 8px;
+}
+
+.countdown-heading-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.countdown-heading-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Timer Container */
+.countdown-timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+.timer-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 2px;
+    border-bottom: 1.5px solid var(--primary-color); /* Elegant bottom gold underline */
+    min-width: 50px;
+}
+
+.timer-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.0rem;
+    font-weight: 400;
+    color: var(--primary-dark);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.timer-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.52rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+/* Contact Info Section Styling */
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    width: 100%;
+}
+
+.contact-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+}
+
+.contact-numbers {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem; /* Sans-serif is naturally larger/wider, so 0.95rem is perfect */
+    font-weight: 600;
+    color: var(--primary-dark);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: auto; /* Make clickable! */
+    transition: var(--transition-smooth);
+}
+
+.contact-link:hover {
+    color: var(--text-main);
+}
+
+.contact-separator {
+    color: var(--primary-light);
+    font-size: 0.85rem;
+}
