@@ -742,9 +742,9 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 22px; /* Increased gap for a spacious feel */
     width: 100%;
-    margin: 12px 0;
+    margin: 20px 0; /* Increased margins */
     box-sizing: border-box;
 }
 
@@ -775,7 +775,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 12px 0 6px 0; /* Decent margins */
+    margin: 22px 0 14px 0; /* Increased margins */
 }
 
 .home-illustration-img {
@@ -825,7 +825,7 @@ html, body {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-main);
-    margin-bottom: 10px;
+    margin-bottom: 18px; /* Increased margin for breathing room */
 }
 
 .blessing-note-text {
@@ -833,16 +833,15 @@ html, body {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-main);
-    margin-top: -4px; /* Pull it slightly closer to the gift note */
-    margin-bottom: 14px;
+    margin-bottom: 22px; /* Removed negative top margin, increased bottom margin */
 }
 
 /* Bottom welcome group */
 .bottom-welcome-group {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    margin-bottom: 10px;
+    gap: 6px;
+    margin-bottom: 22px; /* Increased gap and bottom margin */
 }
 
 .welcome-inshallah {
@@ -866,8 +865,8 @@ html, body {
     font-size: 2.8rem;
     color: var(--primary-dark);
     line-height: 1.0;
-    margin-top: 6px;
-    margin-bottom: 30px; /* Leaves a decent space after final text before flowers */
+    margin-top: 20px; /* Increased margin */
+    margin-bottom: 50px; /* Leaves a decent space after final text before flowers */
 }
 
 /* Down Flower Overlay positioned at the bottom */
@@ -981,8 +980,9 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    margin-top: 18px;
+    gap: 10px;
+    margin-top: 30px; /* Increased margin for separation */
+    margin-bottom: 12px;
     width: 100%;
 }
 
