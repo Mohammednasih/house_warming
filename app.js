@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. Countdown Timer Functionality
-    const targetDate = new Date("August 1, 2026 12:00:00").getTime();
+    const targetDate = new Date("August 1, 2026 11:00:00").getTime();
     
     const daysEl = document.getElementById('countdown-days');
     const hoursEl = document.getElementById('countdown-hours');
